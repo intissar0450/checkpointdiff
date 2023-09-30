@@ -1,0 +1,34 @@
+ALGORITHM diff
+VAR
+    arr1,arr2:ARRAY_OF INTEGER
+    s,i,j:INTEGER:=0
+    found:BOOLEAN:=FALSE
+
+BEGIN
+read(arr1,arr2)
+for i from 0 to arr1.length-1STEP1 do 
+for j from 0 to arr2.length-1STEP1 do 
+if (arr1[i]=arr2[j])then
+found:=true
+break
+end_if
+end_for
+if(found=false)then
+s:=s+arr1[i]
+end _if
+end_for
+
+for j from 0 to arr2.length-1STEP1 do 
+for i from 0 to arr1.length-1STEP1 do 
+if(arr2[j]=arr1[i])then
+found:=true
+break
+end _if
+end_for
+if(found=false)then
+s:=s+arr2[j]
+end_if
+end_for
+write(s)
+END
+

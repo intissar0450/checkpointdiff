@@ -1,0 +1,34 @@
+PROCEDURE dot_product(v1,v2:ARRAY_OF INTEGER,ps:INTEGER)
+VAR
+    i,n,m:INTEGER
+BEGIN
+    ps:=0
+    n:=v1.length-1
+    m:=v2.length-1
+    if (n<>m)then
+    write("you cant calculate the ps of 2 vectors with different length.")
+    end_if
+    for i from 0 to n step 1 do
+    ps:=ps+v1[i]+v2[i]
+    end_for
+END
+// v=[[1,2,3],[2,5,0],[7,2,9],[2,4,6]]
+
+
+ALGORITHM orth_vectors
+VAR
+v:ARRAY_OF ARRAY 
+i,j:INTEGER
+
+    
+BEGIN
+
+    for i from 0 to v.length-1 step 1 do
+    for j from i+1 to v.length-1 step 1 do
+    dot_product(v[i],v[j],ps)
+    if(ps=0)then
+    write(v[i],"and" v[j],"are orthogonal")
+    end_if
+    end_for
+    end_for
+END
